@@ -1,0 +1,19 @@
+name = "xtrack"
+main = "build/worker/shim.mjs"
+compatibility_date = "2024-05-23"
+minify = true
+
+[[kv_namespaces]]
+binding = "XTRACK"
+id = "bc99493fbd1f40fcbe0016ff8ed13ff4"
+
+[build]
+command = "cargo install worker-build && worker-build --release"
+
+[env.dev]
+build = { command = "cargo install worker-build && worker-build --dev" }
+
+[vars]
+UUID = "beeebaa5-feee-4de2-baca-d0aaaeeea7aa"
+MAIN_PAGE_URL = "https://raw.githubusercontent.com/xtracombo/xtravpn/refs/heads/master/web/index.html"
+SUB_PAGE_URL = "https://raw.githubusercontent.com/xtracombo/xtravpn/refs/heads/master/web/sub.html"
