@@ -5,7 +5,7 @@ minify = true
 
 [[kv_namespaces]]
 binding = "XTRACK"
-id = "bc99493fbd1f40fcbe0016ff8ed13ff4"
+id = "8a74e32d8cd447c18e852a51c2f957f1"
 
 [build]
 command = "cargo install worker-build && worker-build --release"
