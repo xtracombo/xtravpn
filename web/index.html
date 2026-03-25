@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLUB GRATIS Websites</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0a0e27, #1a1a2e, #16213e);
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 14, 39, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, #00d4ff, #0088ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #00d4ff;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(45deg, #00d4ff, #0088ff);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: url('https://public.youware.com/users-website-assets/prod/6c736a43-d704-4098-b327-ae33f62d5cdc/2417414c6ce14ef7bf46c4ef62bb5aee.jpg') center/cover;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(10, 14, 39, 0.7);
+            z-index: 1;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #00d4ff, #0088ff, #ffffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: slideInUp 1s ease-out;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            animation: slideInUp 1s ease-out 0.2s both;
+        }
+
+        .cta-button {
+            background: linear-gradient(45deg, #00d4ff, #0088ff);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            animation: slideInUp 1s ease-out 0.4s both;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+        }
+
+        /* Domain Search */
+        .domain-search {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            padding: 2rem;
+            border-radius: 20px;
+            margin: 2rem auto;
+            max-width: 600px;
+            animation: slideInUp 1s ease-out 0.6s both;
+        }
+
+        .search-form {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .search-input {
+            flex: 1;
+            padding: 1rem;
+            border: none;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 1rem;
+            min-width: 250px;
+        }
+
+        .search-input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .search-button {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a6f);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .search-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.3);
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 5rem 0;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+
+        .section h2 {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            background: linear-gradient(45deg, #00d4ff, #ffffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Pricing Table */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .pricing-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pricing-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.1), transparent);
+            transition: all 0.8s ease;
+        }
+
+        .pricing-card:hover::before {
+            left: 100%;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            border-color: #00d4ff;
+            box-shadow: 0 20px 50px rgba(0, 212, 255, 0.2);
+        }
+
+        .pricing-card.featured {
+            border: 2px solid #00d4ff;
+            transform: scale(1.05);
+        }
+
+        .pricing-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #00d4ff;
+        }
+
+        .price {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .price-period {
+            font-size: 1rem;
+            opacity: 0.7;
+            margin-bottom: 2rem;
+        }
+
+        .features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .features li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .features li:before {
+            content: '✓';
+            color: #00d4ff;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        /* Testimonials */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .testimonial:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 212, 255, 0.2);
+        }
+
+        .testimonial-content {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #00d4ff;
+        }
+
+        .author-info h4 {
+            color: #00d4ff;
+            margin-bottom: 0.25rem;
+        }
+
+        /* Control Panel Demo */
+        .control-panel {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-top: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .panel-header {
+            background: linear-gradient(45deg, #00d4ff, #0088ff);
+            color: white;
+            padding: 1rem;
+            border-radius: 10px 10px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .panel-content {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 2rem;
+            border-radius: 0 0 10px 10px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .panel-widget {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .panel-widget:hover {
+            background: rgba(0, 212, 255, 0.2);
+        }
+
+        .widget-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #00d4ff;
+        }
+
+        /* Security Features */
+        .security-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .security-feature {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .security-feature:hover {
+            transform: translateY(-5px);
+            background: rgba(0, 212, 255, 0.1);
+        }
+
+        .security-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #00d4ff;
+        }
+
+        /* Server Options */
+        .server-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .server-option {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(0, 136, 255, 0.1));
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 212, 255, 0.3);
+        }
+
+        .server-option:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 50px rgba(0, 212, 255, 0.3);
+        }
+
+        /* FAQ Section */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question {
+            background: rgba(0, 212, 255, 0.2);
+            padding: 1.5rem;
+            cursor: pointer;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question:hover {
+            background: rgba(0, 212, 255, 0.3);
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-answer.active {
+            padding: 1.5rem;
+            max-height: 200px;
+        }
+
+        /* Live Chat */
+        .chat-widget {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: linear-gradient(45deg, #00d4ff, #0088ff);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0, 212, 255, 0.4);
+        }
+
+        .chat-widget:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 30px rgba(0, 212, 255, 0.6);
+        }
+
+        .chat-icon {
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        /* Animations */
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .section h2 {
+                font-size: 2rem;
+            }
+
+            .search-form {
+                flex-direction: column;
+            }
+
+            .search-input {
+                min-width: 100%;
+            }
+
+            .pricing-grid,
+            .testimonials-grid,
+            .security-grid,
+            .server-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-card.featured {
+                transform: none;
+            }
+
+            .panel-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(10, 14, 39, 0.9);
+            padding: 3rem 0;
+            text-align: center;
+            border-top: 1px solid rgba(0, 212, 255, 0.3);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #00d4ff;
+        }
+
+        /* Circuit Animation */
+        .circuit-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://public.youware.com/users-website-assets/prod/6c736a43-d704-4098-b327-ae33f62d5cdc/95dc28ed2f9c4baab5e10ca5b61af9aa.jpg');
+            background-size: cover;
+            opacity: 0.1;
+            animation: float 20s ease-in-out infinite;
+        }
+/* ===== NAVBAR MOBILE (HAMBURGER) ===== */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.nav-toggle span {
+  width: 26px;
+  height: 3px;
+  background: #00d4ff;
+  border-radius: 3px;
+  transition: all .3s ease;
+}
+
+/* MOBILE MODE */
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgba(10, 14, 39, 0.98);
+    flex-direction: column;
+    display: none;
+    gap: 0.2rem;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .nav-links a {
+    padding: 0.1rem 0.2rem;
+    display: block;
+  }
+}
+
+        .panel-button {
+            background: linear-gradient(45deg, #00d4ff, #0088ff);
+            color: white;
+            padding: 0.4rem 1.3rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            animation: slideInUp 1s ease-out 0.4s both;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .panel-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+        }
+        
+        /* mp3 Features */
+        .mp3-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .mp3-feature {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .mp3-feature:hover {
+            transform: translateY(-5px);
+            background: rgba(0, 212, 255, 0.3);
+        }
+
+        .mp3-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #00d4ff;
+        }
+    </style>
+<script src="https://lib.youware.com/youware-lib.1747145198.js" id="yourware-lib"></script></head>
+<body>
+    <!-- Navigation -->
+ <nav>
+  <div class="nav-container">
+    <div class="logo">CLUB GRATIS</div>
+
+    <!-- HAMBURGER -->
+    <div class="nav-toggle" id="navToggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <!-- MENU -->
+    <ul class="nav-links" id="navMenu">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#control-panel">Control Panel</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#pricing">Get a Free Account</a></li>
+      <li><a href="https://donasi.clubgratis.biz.id">Donate</a></li>
+      <li><a href="#free-domain">Free Domain</a></li>
+      <li><a href="#support">Support</a></li>
+    </ul>
+  </div>
+</nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="circuit-bg"></div>
+        <div class="hero-content">
+            <h1 class="floating">Get FRee VPN</h1>
+            <p>Experience the future of web hosting - where cutting-edge technology meets unparalleled performance</p>
+            <a href="#pricing" class="cta-button">Get Started Today</a>
+            
+            <!-- Domain Search -->
+            <div class="domain-search">
+                <h3 style="margin-bottom: 1rem;">Find the Perfect Wildcard Bug for You</h3>
+                <form class="search-form">
+                    <input type="text" class="search-input" placeholder="Enter your bug name..." />
+                    <button type="submit" class="search-button">Search</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section">
+        <h2>Music</h2>
+        <div class="mp3-grid">
+            <div class="mp3-feature">
+                <div class="mp3-icon">️🎧</div>
+                <h3>MP3</h3>
+                <p>Listen to mp3 songs, music that will make you feel the atmosphere.</p>
+                <a href="/mp3" class="panel-button">More</a>
+            </div>
+           </div>
+            </section>
+    
+        <!-- Control Panel Demo -->
+    <section id="control-panel" class="section">
+        <h2>Control Panel</h2>
+        <div class="control-panel">
+            <div class="panel-header">
+                <h3>Servers</h3>
+                <div style="color: #00ff00;">● Online</div>
+            </div>
+            <div class="panel-content">
+                <div class="panel-widget">
+                    <div class="widget-icon">📊</div>
+                    <h4>Analytics</h4>
+                    <p>Real-time traffic monitoring</p>
+                </div>
+                <div class="panel-widget">
+                    <div class="widget-icon">🗂️</div>
+                    <h4>File Manager</h4>
+                    <p>Easy file management</p>
+                </div>
+                <div class="panel-widget">
+                    <div class="widget-icon">🔧</div>
+                    <h4>Settings</h4>
+                    <p>One-click configurations</p>
+                </div>
+                <div class="panel-widget">
+                    <div class="widget-icon">💾</div>
+                    <h4>Cvv Generator</h4>
+                    <p>One-click to generate card</p>
+                    <a href="/vless.html" class="panel-button">More</a>
+                </div>
+                <div class="panel-widget">
+                    <div class="widget-icon">💳</div>
+                    <h4>Card</h4>
+                    <p>Automated to check cc</p>
+                    <a href="/vless.html" class="panel-button">More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Security Features -->
+    <section id="features" class="section">
+        <h2>Features</h2>
+        <div class="security-grid">
+            <div class="security-feature">
+                <div class="security-icon">️📧</div>
+                <h3>Temp Mail</h3>
+                <p>Create a temporary email address for free, for personal use only. Not for anything illegal.</p>
+                <a href="/temp-mail" class="panel-button">More</a>
+            </div>
+            <div class="security-feature">
+                <div class="security-icon">🔍</div>
+                <h3>Check Single Proxy</h3>
+                <p>Check your proxy IP to see the status and all information completely and accurately.</p>
+                <a href="/check-proxy" class="panel-button">More</a>
+            </div>
+            <div class="security-feature">
+                <div class="security-icon">🌐</div>
+                <h3>Proxy Checker</h3>
+                <p>Direct check of several proxies or you can check with txt file.</p>
+                <a href="/proxy-checker" class="panel-button">More</a>
+            </div>
+            <div class="security-feature">
+                <div class="security-icon">🛜</div>
+                <h3>List Proxy Active</h3>
+                <p>There are thousands of proxies online, you can view them here in real-time. </p>
+                <a href="/list-proxy" class="panel-button">More</a>
+            </div>
+            <div class="security-feature">
+                <div class="security-icon">A</div>
+                <h3>Auto SSL .arpa</h3>
+                <p>Create ssl domain ip6 arpa</p>
+                <a href="/list-proxy" class="panel-button">More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="section">
+        <h2>VPN</h2>
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <h3>VLESS</h3>
+                <div class="price">$0.00</div>
+                <div class="price-period">per month</div>
+                <ul class="features">
+                    <li>Free to Choose Server</li>
+                    <li>Unlimited Bandwidth</li>
+                    <li>Safe website browsing </li>
+                    <li>Always Free</li>
+                    <li>24/7 Support</li>
+                    <li>99.9% Uptime</li>
+                    <li>Life-time</li>
+                    <li>Daily Backups</li>
+                    <li>Basic Security</li>
+                </ul>
+                <a href="/vless.html" class="cta-button">Choose Plan</a>
+            </div>
+            
+            <div class="pricing-card featured">
+                <h3>VMESS</h3>
+                <div class="price">$0.00</div>
+                <div class="price-period">per month</div>
+                <ul class="features">
+                    <li>Free to Choose Server</li>
+                    <li>Unlimited Bandwidth</li>
+                    <li>Safe browsing Websites</li>
+                    <li>Always Free</li>
+                    <li>Priority Support</li>
+                    <li>99.9% Uptime</li>
+                    <li>Life-time</li>
+                    <li>Daily Backups</li>
+                    <li>Advanced Security</li>
+                </ul>
+                <a href="/vmess.html" class="cta-button">Choose Plan</a>
+            </div>
+            
+            <div class="pricing-card">
+                <h3>TROJAN</h3>
+                <div class="price">$0.00</div>
+                <div class="price-period">per month</div>
+                <ul class="features">
+                    <li>Free to Choose Server</li>
+                    <li>Unlimited Bandwidth</li>
+                    <li>Safe browsing Websites</li>
+                    <li>Always Free</li>
+                    <li>VIP Support</li>
+                    <li>99.99% Uptime</li>
+                    <li>Life-time</li>
+                    <li>Enterprise Security</li>
+                    <li>CDN Included</li>
+                    <li>Dedicated Resources</li>
+                </ul>
+                <a href="/trojan.html" class="cta-button">Choose Plan</a>
+            </div>
+            
+            <div class="pricing-card">
+                <h3>SHADOWSHOCK</h3>
+                <div class="price">$0.00</div>
+                <div class="price-period">per month</div>
+                <ul class="features">
+                    <li>Free to Choose Server</li>
+                    <li>Unlimited Bandwidth</li>
+                    <li>Safe browsing Websites</li>
+                    <li>Always Free</li>
+                    <li>24/7 Support</li>
+                    <li>99.99% Uptime</li>
+                    <li>Life-time</li>
+                    <li>Enterprise Security</li>
+                    <li>CDN Included</li>
+                    <li>Dedicated Resources</li>
+                </ul>
+                <a href="/ss.html" class="cta-button">Choose Plan</a>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Server Options -->
+    <section id="free-domain" class="section">
+        <h2>Free domains or hosting</h2>
+        <div class="server-grid">
+            <div class="server-option">
+                <h3>Shared Hosting</h3>
+                <p>Perfect for beginners and small websites. Cost-effective solution with all essential features.</p>
+                <ul style="text-align: left; list-style: none; padding: 1rem 0;">
+                    <li>✓ Unlimited Websites</li>
+                    <li>✓ Free Domain</li>
+                    <li>✓ Email Accounts</li>
+                    <li>✓ 1-Click WordPress Install</li>
+                    <a href="#" class="panel-button">Get</a>
+                </ul>
+            </div>
+            <div class="server-option">
+                <h3>Hosting</h3>
+                <p>Dedicated resources for growing websites. Enhanced performance and control.</p>
+                <ul style="text-align: left; list-style: none; padding: 1rem 0;">
+                    <li>✓ Dedicated CPU & RAM</li>
+                    <li>✓ Root Access</li>
+                    <li>✓ SSD Storage</li>
+                    <li>✓ Scalable Resources</li>
+                    <a href="#" class="panel-button">Get</a>
+                </ul>
+            </div>
+            <div class="server-option">
+                <h3>Dedicated Servers</h3>
+                <p>Maximum performance for high-traffic websites. Complete server control and customization.</p>
+                <ul style="text-align: left; list-style: none; padding: 1rem 0;">
+                    <li>✓ Full Server Control</li>
+                    <li>✓ Custom Configurations</li>
+                    <li>✓ High-Performance Hardware</li>
+                    <li>✓ 24/7 Server Monitoring</li>
+                    <a href="#" class="panel-button">Get</a>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+        <!-- Testimonials Section -->
+    <section class="section">
+        <h2>What Our Clients Say</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial">
+                <div class="testimonial-content">
+                    "Club-Gratis has revolutionized our VPN experience. It's completely free, yet its performance is excellent, and the support team is always ready to help when we need it."
+                </div>
+                <div class="testimonial-author">
+                    <img src="https://public.youware.com/users-website-assets/prod/6c736a43-d704-4098-b327-ae33f62d5cdc/4743a74e073941e6b1eb02a756f1950c.jpg" alt="Sarah Johnson" class="author-avatar" />
+                    <div class="author-info">
+                        <h4>Sarah</h4>
+                        <p>CEO, TechSlite Inc.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial">
+                <div class="testimonial-content">
+                    "Using this free VPN has made our website experience incredibly smooth. We've seen a 300% increase in browsing speed since switching to Club-Gratis."
+                </div>
+                <div class="testimonial-author">
+                    <img src="https://public.youware.com/users-website-assets/prod/6c736a43-d704-4098-b327-ae33f62d5cdc/9dd7265936d14a3087ae3173ae08d810.jpg" alt="Michael Chen" class="author-avatar" />
+                    <div class="author-info">
+                        <h4>Leuncha</h4>
+                        <p>CTO, Digital Solutions</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial">
+                <div class="testimonial-content">
+                    "Excellent service and signal. Internet speeds and browsing and social media are a breeze. Thank you to "Club-Gratis" for giving us peace of mind, as this service is completely free."
+                </div>
+                <div class="testimonial-author">
+                    <img src="https://public.youware.com/users-website-assets/prod/6c736a43-d704-4098-b327-ae33f62d5cdc/51b5e985893f4f6e923069f85da916f7.jpg" alt="Emily Rodriguez" class="author-avatar" />
+                    <div class="author-info">
+                        <h4>Emidriguez</h4>
+                        <p>Founder, E-Shop Pro</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="support" class="section">
+        <h2>Knowledge Base & FAQ</h2>
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    What makes different from other hosting providers?
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    We combine cutting-edge technology with exceptional customer service. Our futuristic infrastructure, advanced security measures, and intuitive control panel set us apart from traditional hosting providers.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    Do you offer a money-back guarantee?
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    Yes! We offer a 30-day money-back guarantee on all our hosting plans. If you're not completely satisfied, we'll refund your payment in full.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    How can I migrate my existing website?
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    Our expert migration team will handle the entire process for free. We ensure zero downtime and complete data integrity during the migration process.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    What kind of support do you provide?
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    We provide 24/7 customer support through live chat, email, and phone. Our expert technical team is always ready to help you with any hosting-related questions.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#pricing">Get Accounts</a>
+                <a href="#features">Features</a>
+                <a href="#support">Support</a>
+                <a href="#contact">Contact</a>
+                <a href="#terms">Terms</a>
+                <a href="https://t.me/club_gratis">Comunity</a>
+            </div>
+            <p>&copy; 2026 Club Gratis - Next-Generation Web Free VPN. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Live Chat Widget -->
+    <div class="chat-widget" onclick="openLiveChat()">
+        <div class="chat-icon">💬</div>
+    </div>
+
+    <script>
+        // FAQ Toggle Function
+        function toggleFAQ(element) {
+            const answer = element.nextElementSibling;
+            const icon = element.querySelector('span');
+            
+            if (answer.classList.contains('active')) {
+                answer.classList.remove('active');
+                icon.textContent = '+';
+            } else {
+                // Close all other FAQs
+                document.querySelectorAll('.faq-answer.active').forEach(item => {
+                    item.classList.remove('active');
+                    item.previousElementSibling.querySelector('span').textContent = '+';
+                });
+                
+                answer.classList.add('active');
+                icon.textContent = '-';
+            }
+        }
+
+        // Live Chat Function
+        function openLiveChat() {
+            alert('Live chat would connect you to our 24/7 support team! 💬\n\nFor this demo, you can contact us at:\n📧 email@clubgratis.my.id\n📞 1-800\n\nOur team is standing by to help you!');
+        }
+
+        // Domain Search Function
+        document.querySelector('.search-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const domain = document.querySelector('.search-input').value;
+            if (domain) {
+                alert(`Searching for "${domain}"...\n\n✅ ${domain}.com - Available!\n✅ ${domain}.net - Available!\n✅ ${domain}.org - Available!\n\nDo you want to create one of the accounts with this bug?`);
+            }
+        });
+
+        // Smooth Scrolling for Navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.style.background = 'rgba(10, 14, 39, 0.98)';
+            } else {
+                nav.style.background = 'rgba(10, 14, 39, 0.95)';
+            }
+        });
+
+        // Add some interactive effects
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate elements on scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Observe elements for animation
+            document.querySelectorAll('.pricing-card, .testimonial, .security-feature, .server-option').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'all 0.6s ease';
+                observer.observe(el);
+            });
+        });
+    </script>
+<script>
+  const navToggle = document.getElementById('navToggle');
+  const navMenu = document.getElementById('navMenu');
+
+  navToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+  });
+</script>
+</body>
+</html>
